@@ -50,7 +50,7 @@ setuptools.setup(
                       "pynndescent==0.5.11",
                       "pyparsing==3.1.1",
                       "python-dateutil==2.8.2",
-                      "pytz==2024.1"
+                      "pytz==2024.1",
                       "scanpy==1.9.8",
                       "scikit-learn==1.4.1.post1",
                       "scipy==1.12.0",
