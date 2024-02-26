@@ -22,7 +22,7 @@ For specific setting, please see <a href="https://github.com/DARKpmm/scMDCF/blob
 ## Install from PyPi
     conda create -n scMDCF_env python=3.9.16
     conda activate scMDCF_env
-    pip install -r requirements.txt
+    pip install scMDCF==0.0.2
 # Usage
 `scMDCF` is a deep embedding learning method for single-cell multi-omics data clustering, which can be used to:
 * CITE-seq dataset clustering. The example can be seen in the <a href="https://github.com/DARKpmm/scMDCF/blob/main/scMDCF/main_CITE.py">main_CITE.py</a>
