@@ -23,17 +23,6 @@ def eva_nolabel(data, y):
     asw = silhouette_score(data, y)
     return db, ch, asw
 
-def target_distribution(Q):
-    """
-    calculate the target distribution (student-t distribution)
-    Args:
-        Q: the soft assignment distribution
-    Returns: target distribution P
-    """
-    weight = Q ** 2 / Q.sum(0)
-    P = (weight.t() / weight.sum(1)).t()
-    return P
-
 def read_data(file_path1, file_path2, file_type, label_file):
     if file_type=='h5ad':
         atac = sc.read_h5ad(file_path2)

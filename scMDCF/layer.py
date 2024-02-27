@@ -103,3 +103,14 @@ class scMDCF(nn.Module):
         p_i_j = p_i_j / p_i_j.sum()  # normalise
 
         return p_i_j    
+    
+    def target_distribution(Q):
+        """
+        calculate the target distribution (student-t distribution)
+        Args:
+            Q: the soft assignment distribution
+        Returns: target distribution P
+        """
+        weight = Q ** 2 / Q.sum(0)
+        P = (weight.t() / weight.sum(1)).t()
+        return P
