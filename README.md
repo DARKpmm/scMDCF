@@ -1,4 +1,9 @@
 # scMDCF
+
+[![scMDCF badge](https://img.shields.io/badge/scMDCF-python-orange)](https://github.com/DARKpmm/scMDCF)
+[![PyPI badge](https://img.shields.io/pypi/v/scMDCF.svg)](https://pypi.org/project/scMDCF/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+
 `scMDCF` is a python package containing tools for clustering single cell multi-omics data based on cross-modality contrastive learning to learn the common latent representation and assign clustering.
 
 - [Overview](#overview)
