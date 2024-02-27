@@ -104,7 +104,7 @@ class scMDCF(nn.Module):
 
         return p_i_j    
     
-    def target_distribution(Q):
+    def target_distribution(self, Q):
         """
         calculate the target distribution (student-t distribution)
         Args:
