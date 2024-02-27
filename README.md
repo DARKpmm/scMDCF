@@ -43,8 +43,8 @@ For specific setting, please see <a href="https://github.com/DARKpmm/scMDCF/blob
 
 # Usage
 `scMDCF` is a deep embedding learning method for single-cell multi-omics data clustering, which can be used to:
-* CITE-seq dataset clustering. The example can be seen in the <a href="https://github.com/DARKpmm/scMDCF/blob/main/scMDCF/main_CITE.py">main_CITE.py</a>
-* SNARE-seq (paired RNA-seq and ATAC-seq) dataset clustering. The example can be seen in the <a href="https://github.com/DARKpmm/scMDCF/blob/main/scMDCF/main_SNARE.py">main_SNARE.py</a>
+* CITE-seq dataset clustering. The example can be seen in the <a href="https://github.com/DARKpmm/scMDCF/tree/main/tutorial/main_CITE.py">main_CITE.py</a>
+* SNARE-seq (paired RNA-seq and ATAC-seq) dataset clustering. The example can be seen in the <a href="https://github.com/DARKpmm/scMDCF/tree/main/tutorial/main_SNARE.py">main_SNARE.py</a>
 
 # Data Availability
 The datasets we used can be download in <a href="https://github.com/DARKpmm/scMDCF/tree/main/dataset">dataset</a>
