@@ -38,8 +38,8 @@ def parameter_setting():
 
 parser=parameter_setting()
 args = parser.parse_args()
-file_path1 = '/home/chengyue/scMDCF/dataset/'+args.file_name1
-file_path2 = '/home/chengyue/scMDCF/dataset/'+args.file_name2
+file_path1 = '../dataset/'+args.file_name1
+file_path2 = '../dataset/'+args.file_name2
 adata_RNA, adata_ADT, cluster_number, y = read_data(file_path1, file_path2, args.file_type, args.label_file)
 adata_RNA = normalize(adata_RNA, highly_genes=args.highly_genes, normalize_input=True)
 adata_ADT = normalize(adata_ADT, highly_genes=args.highly_genes, normalize_input=True)
