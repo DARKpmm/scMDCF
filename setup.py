@@ -2,7 +2,7 @@ import setuptools
 
 setuptools.setup(
     name="scMDCF",
-    version="0.1.1",
+    version="0.1.2",
     author="Yue Cheng",
     author_email="chengyue22@mails.jlu.edu.cn",
     description="Integrative and Cross-Modality Analysis of Single-Cell Data Across Multiomic Profiles Using scMDCF",
