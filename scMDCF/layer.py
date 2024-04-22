@@ -18,7 +18,7 @@ class scMDCF_MLP(nn.Module):
     def forward(self, feature):
         latent = feature
         for layer in self.net:
-            latent = layer(latent)#pbmc10k without.type(torch.float32)
+            latent = layer(latent)
         
         return latent
 

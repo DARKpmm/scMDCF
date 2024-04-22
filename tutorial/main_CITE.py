@@ -15,13 +15,13 @@ warnings.filterwarnings('ignore')
 def parameter_setting(): 
     
     parser = argparse.ArgumentParser(description='train')
-    parser.add_argument('--file_name1', default='inhouse_rna.h5ad')#peripheral_blood_rna.h5ad  pbmc_spector.h5 Pbmc10k-RNA
+    parser.add_argument('--file_name1', default='inhouse_rna.h5ad')
     parser.add_argument('--file_name2', default='inhouse_adt.h5ad')
-    parser.add_argument('--label_file', default=None)#'/home/chengyue/data/multi-omics/inhouse_label.csv')#'/home/chengyue/data/multi-omics/peripheral_blood_label.tsv'
+    parser.add_argument('--label_file', default=None)
     parser.add_argument('--save_results', default='False', type=bool)
     parser.add_argument('--file_type', default='h5ad', type=str)
-    parser.add_argument('--model_file', default='/home/chengyue/data/multi-omics/test1.pth.tar')
-    parser.add_argument("--highly_genes", default = 1000, type = int)#SNARE-seq 2500; CITE-seq 1000
+    parser.add_argument('--model_file', default='../text.pth.tar')
+    parser.add_argument("--highly_genes", default = 1000, type = int)
     parser.add_argument("--lr_pre", default = "1e-2", type = float)
     parser.add_argument("--lr_alt", default = "1e-3", type = float)
     parser.add_argument("--epoch_pre", default = "200", type = int)
@@ -32,7 +32,7 @@ def parameter_setting():
     parser.add_argument("--zdim", default = "8", type = int)
     parser.add_argument("--alpha", default = "1.", type = float)
     parser.add_argument("--gamma", default = "1.", type = float)
-    parser.add_argument("--lamb", default = "0.5", type = float)# 10 for atac; 0.5 for adt
+    parser.add_argument("--lamb", default = "0.5", type = float)
     
     return parser
 

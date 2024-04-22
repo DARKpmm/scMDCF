@@ -2,7 +2,7 @@ import setuptools
 
 setuptools.setup(
     name="scMDCF",
-    version="1.0.2",
+    version="1.1.2",
     author="Yue Cheng",
     author_email="chengyue22@mails.jlu.edu.cn",
     description="Unified Cross-modality Integration and Inference of Single-Cell Multiomic Data with Deep Contrastive Learning",

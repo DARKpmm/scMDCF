@@ -15,12 +15,12 @@ warnings.filterwarnings('ignore')
 def parameter_setting(): 
     
     parser = argparse.ArgumentParser(description='train')
-    parser.add_argument('--file_name1', default='pbmc_10x_rna_public.h5ad')#peripheral_blood_rna.h5ad  pbmc_spector.h5 Pbmc10k-RNA
-    parser.add_argument('--file_name2', default='pbmc_10x_atac_public.h5ad')
-    parser.add_argument('--label_file', default=None)#'/home/chengyue/data/multi-omics/GSE128639_BMNC_ypred.txt')#'/home/chengyue/data/multi-omics/peripheral_blood_label.tsv'
+    parser.add_argument('--file_name1', default='spleen_lymph.h5')
+    parser.add_argument('--file_name2', default=None)
+    parser.add_argument('--label_file', default=None)
     parser.add_argument('--save_results', default='False', type=bool)
-    parser.add_argument('--file_type', default='h5ad', type=str)
-    parser.add_argument('--model_file', default='/home/chengyue/data/multi-omics/test1.pth.tar')
+    parser.add_argument('--file_type', default='h5', type=str)
+    parser.add_argument('--model_file', default='../test.pth.tar')
     parser.add_argument("--highly_genes", default = 2500, type = int)#SNARE-seq 2500; CITE-seq 1000
     parser.add_argument("--lr_pre", default = "1e-2", type = float)
     parser.add_argument("--lr_alt", default = "1e-3", type = float)
@@ -52,15 +52,15 @@ args.ATAC_input = adata_ATAC.X.shape[1]
 args.n_cell = adata_RNA.X.shape[0]
 args.n_clusters = cluster_number
 
-args.layere_omics1_view = [adata_RNA.X.shape[1], args.enc1, args.enc2]#for atac adata_RNA.X.shape[1], args.enc1, args.enc2; for adt adata_RNA.X.shape[1], args.enc1, args.enc2, args.zdim
-args.layere_omics2_view = [adata_ATAC.X.shape[1], args.enc1, args.enc2]#for atac adata_ATAC.X.shape[1], args.enc1, args.enc2; adata_ATAC.X.shape[1], args.enc1, args.enc2, args.zdim
+args.layere_omics1_view = [adata_RNA.X.shape[1], args.enc1, args.enc2]
+args.layere_omics2_view = [adata_ATAC.X.shape[1], args.enc1, args.enc2]
 args.layerd_omics1_view = [args.zdim, args.enc2, args.enc1, adata_RNA.X.shape[1]]
 args.layerd_omics2_view = [args.zdim, args.enc2, args.enc1, adata_ATAC.X.shape[1]]
 args.fusion_layer = [2*args.enc2, 32, args.zdim]
 
 model = scMDCF(args).to(args.device)
 
-x_rna, x_atac = torch.from_numpy(adata_RNA.X).to(args.device).float(), torch.from_numpy(adata_ATAC.X).to(args.device).float() #for human pbmc and brain 10xmalt and bmnc .float()
+x_rna, x_atac = torch.from_numpy(adata_RNA.X).to(args.device).float(), torch.from_numpy(adata_ATAC.X).to(args.device).float() 
 t0=time()
 pre_train(args, model, x_rna, x_atac, y)
 

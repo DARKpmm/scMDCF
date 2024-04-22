@@ -31,9 +31,9 @@ def alt_train(args, model, X_RNA, X_ATAC, y):
         _, _, _, _, z, _ = model(X_RNA, X_ATAC)
     kmeans = KMeans(n_clusters = args.n_clusters, n_init=20)
     y_pred = kmeans.fit_predict(z.data.cpu().numpy())
-    #nmi, ari, ami, fmi, hom, com, v = eva(y, y_pred)
+    
     model.cluster_layer.data = torch.tensor(kmeans.cluster_centers_).to(args.device)
-    #print('z for clustering, NMI:{:.4f}, ARI:{:.4f}, AMI:{:.4f}, FMI:{:.4f}, HOM:{:.4f}, COM:{:.4f}, V:{:.4f}'.format(nmi, ari, ami, fmi, hom, com, v))
+    
     
     optimizer = Adadelta(filter(lambda p: p.requires_grad, model.parameters()), lr=args.lr_alt, rho=.8)
     

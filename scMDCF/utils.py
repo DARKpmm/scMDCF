@@ -26,20 +26,20 @@ def eva_nolabel(data, y):
 def read_data(file_path1, file_path2, file_type, label_file):
     if file_type=='h5ad':
         atac = sc.read_h5ad(file_path2)
-        rna = sc.read_h5ad(file_path1)# Pbmc10k Chen-2019
+        rna = sc.read_h5ad(file_path1)
         atac_X = np.array(atac.X.toarray())
         rna_X = np.array(rna.X.toarray())
         if label_file==None:
-            cell_name = np.array(atac.obs["cell_type"])#;seurat_clusters cell_type
+            cell_name = np.array(atac.obs["cell_type"])
         else:
-            cell_name = pd.read_csv(label_file, usecols=[1])#有列名的时候不读列名无header=None , usecols=[1] read_table read_csv
+            cell_name = pd.read_csv(label_file, usecols=[1])
         cell_type, y = np.unique(cell_name, return_inverse=True)
         print(y)
         cluster_number = int(max(y) - min(y) + 1)   
         adata_RNA = sc.AnnData(rna_X)
         adata_ATAC = sc.AnnData(atac_X)
     elif file_type=='h5':
-        data_mat = h5py.File(file_path1)#SMAGESeq; pbmc_spector 49; GSE128639_BMNC; spleen_lymph 112; 
+        data_mat = h5py.File(file_path1)
         rna_X = np.array(data_mat['X1'])
         atac_X = np.array(data_mat['X1'])
         y = np.array(data_mat['Y'])
@@ -65,7 +65,7 @@ def read_data_nolabel(file_path1, file_path2, file_type):
         #adata_RNA = sc.AnnData(rna_X)
         #adata_ATAC = sc.AnnData(atac_X)
     elif file_type=='h5':
-        data_mat = h5py.File(file_path1)#SMAGESeq; pbmc_spector 49; GSE128639_BMNC; spleen_lymph 112; 
+        data_mat = h5py.File(file_path1)
         rna_X = np.array(data_mat['X1'])
         atac_X = np.array(data_mat['X1'])
         data_mat.close()
