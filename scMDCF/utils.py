@@ -44,8 +44,6 @@ def read_data(file_path1, file_path2, file_type, label_file):
         atac_X = np.array(data_mat['X1'])
         y = np.array(data_mat['Y'])
         data_mat.close()
-        cell_name = pd.read_csv(label_file, header=None)
-        cell_type, y = np.unique(cell_name, return_inverse=True)
         cluster_number = int(max(y) - min(y) + 1) 
         adata_RNA = sc.AnnData(rna_X)
         adata_ATAC = sc.AnnData(atac_X)
