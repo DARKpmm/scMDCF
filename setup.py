@@ -2,10 +2,10 @@ import setuptools
 
 setuptools.setup(
     name="scMDCF",
-    version="1.1.2",
+    version="1.1.3",
     author="Yue Cheng",
     author_email="chengyue22@mails.jlu.edu.cn",
-    description="Unified Cross-modality Integration and Inference of Single-Cell Multiomic Data with Deep Contrastive Learning",
+    description="Aligned Cross-modal Integration and Characterization of Single-Cell Multiomic Data with Deep Contrastive Learning",
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
     url="https://github.com/DARKpmm/scMDCF",
